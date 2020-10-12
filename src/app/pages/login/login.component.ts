@@ -9,8 +9,8 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  userName: string = "";
-  password: string = "";
+  name = new FormControl('');
+  password = new FormControl('');
   constructor(private loginService: LoginService, private router: Router ){ }
 
   ngOnInit(): void {
@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
 
 
   login(){
-    console.log('un and pw '+ this.userName + ' ' + this.password);
-    this.loginService.loginWithCredentials('din' , 'din1234')
+    console.log('un and pw '+ this.name.value + ' ' + this.password.value);
+    this.loginService.loginWithCredentials(this.name.value , this.password.value)
       .then(status => 
         {
           if(status){
