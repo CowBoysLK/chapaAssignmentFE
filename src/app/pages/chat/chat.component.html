@@ -1,14 +1,24 @@
 <div class="container">
   <div class="rows">
     <div class="sidebar">
-      <div class="card">
+      <div class="card" >
         <div class="card-header bg-info">
-          <img src="assets/images/user-avatar.svg" alt="" />
+          <div><img src="assets/images/user-avatar.svg" alt="" /></div>
           <div class="detail">
             <p>User Name</p>
           </div>
         </div>
-        <div class="card-body">
+        <div class="card-body" *ngFor="let chat of chats">
+          <div class="contact" (click)="getChatMessages(chat.id)">
+            <a href="" class="contact-btn">
+              <div><img src="assets/images/user-avatar.svg" alt="" /></div>
+              <div>{{chat.chatName}}</div>
+              <!-- <div>Today</div> -->
+            </a>
+          </div>
+          
+        </div>
+        <!-- <div class="card-body">
           <div class="contact">
             <a href="" class="contact-btn">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
@@ -16,77 +26,8 @@
               <div>Today</div>
             </a>
           </div>
-          <div class="contact">
-            <a href="#" class="contact-btn active">
-              <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>Today</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>Yesterday</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>5 Oct</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>5 Oct</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>2 Oct</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>28 Sep</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>24 Sep</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>20 Sep</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>16 Sep</div>
-            </a>
-          </div>
-          <div class="contact">
-            <a href="#" class="contact-btn">
-              <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>1 Sep</div>
-            </a>
-          </div>
-        </div>
+          
+        </div> -->
       </div>
     </div>
     <div class="main">
