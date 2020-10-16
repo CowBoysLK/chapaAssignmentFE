@@ -9,8 +9,8 @@
           </div>
         </div>
         <div class="card-body" *ngFor="let chat of chats">
-          <div class="contact" (click)="getChatMessages(chat.id)">
-            <a href="" class="contact-btn">
+          <div class="contact" (click)="getChatMessages(chat.chatId)">
+            <a  class="contact-btn">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
               <div>{{chat.chatName}}</div>
               <!-- <div>Today</div> -->
@@ -32,113 +32,47 @@
     </div>
     <div class="main">
       <div class="card">
+      
         <div class="card-header bg-info">
           <img src="assets/images/user-avatar2.svg" alt="" />
           <p>User Name</p>
         </div>
-        <div class="card-body msg-body">
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
+        <div class="card-body msg-body" *ngFor="let message of chatMssages">
+          <div *ngIf="message.displayType == 0; then mediaSent; else mediaReceived"></div>
+          <ng-template #mediaSent>
+            <div class="media sent">
+              <img src="assets/images/user-avatar.svg" alt="" />
+              <div class="message">
+                <p>
+                  {{message.text}}
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt voluptates molestias ut ad ex. Voluptatibus optio at
-                hic saepe in, dolor voluptatem quos culpa voluptate placeat.
-                Nesciunt saepe perferendis eius.
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
+          </ng-template>
+          <ng-template #mediaReceived>
+            <div class="media received">
+              <img src="assets/images/user-avatar2.svg" alt="" />
+              <div class="message">
+                <p>
+                  {{message.text}}
+                </p>
+              </div>
+            </div> 
+          </ng-template>
+          
+          
+          
         </div>
         <div class="compose">
-          <form action="">
+         <form>
             <textarea
               name=""
               id=""
               rows="1"
+              [formControl]="msgText"
               placeholder="Enter your message..."
             ></textarea>
-            <button>
+            <button (click)="createNewMessage() ">
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>

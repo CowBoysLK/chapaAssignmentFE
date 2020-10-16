@@ -46,4 +46,18 @@ export class ChatService {
       return null;
     }
   }
+  async sendNewMessage(msg: String , userId : Number , chatId : Number){
+  const url = 'http://localhost:3000/api/messages/newMsg'
+  const result = await axios.post(url,{
+    message: msg ,
+    user: userId,
+    chat: chatId
+  });
+  if (result.status === 200) {
+    
+    return true;
+  } else { 
+    return null;
+  }
+}
 }
