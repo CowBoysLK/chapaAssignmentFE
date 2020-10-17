@@ -1,12 +1,12 @@
-body {
-  margin: 0;
-  height: 100%;
-}
+// body {
+//   margin: 0;
+//   height: 100%;
+// }
 
-* {
-  padding: 0;
-  margin: 0;
-}
+// * {
+//   padding: 0;
+//   margin: 0;
+// }
 
 .container {
   width: 100%;
@@ -34,6 +34,7 @@ body {
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   display: flex;
+  height: 7vh;
 }
 
 .bg-info {
@@ -54,7 +55,7 @@ body {
 }
 
 .sidebar .card-body {
-  max-height: 560px;
+  height: 90vh;
   overflow-y: scroll;
 }
 
@@ -125,7 +126,7 @@ body {
 }
 
 .main .card-body {
-  max-height: 530px;
+  height: 84vh;
   overflow-y: scroll;
 }
 
@@ -159,7 +160,7 @@ body {
 }
 
 .compose {
-  padding: 10px;
+  padding: 15px;
   // border: 2px black;
   background-color: #333;
   textarea:focus {
