@@ -75,6 +75,8 @@ export class ChatComponent implements OnInit {
     const chatId = sessionStorage.getItem('activeChat');
     const userId = sessionStorage.getItem('userId');
     const message = this.msgText.value;
+    console.log('MSG ' + message);
+    
     this.msgText.setValue('');
     this.chatMssages.push({
       text: message ,
