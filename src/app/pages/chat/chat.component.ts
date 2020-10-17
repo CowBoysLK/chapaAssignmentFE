@@ -36,8 +36,14 @@ export class ChatComponent implements OnInit {
     });
 
     const getMsgObervable = new Observable( () => {
-      setInterval(()=> this.getChatMessages(this.chatId),2500);
+      setInterval(()=>{
+        if(this.chatId > 0)
+        {
+          this.getChatMessages(this.chatId);
+        }
+      }, 2500);
     });
+   
 
     getMsgObervable.subscribe();
   }
