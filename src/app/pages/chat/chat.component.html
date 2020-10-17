@@ -1,33 +1,76 @@
 <div class="container">
   <div class="rows">
-    <div class="sidebar">
-      <div class="card" >
+    <div class="wrapper">
+      <input type="checkbox" id="btn" hidden />
+      <label for="btn" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </label>
+      <nav id="sidemenubar">
         <div class="card-header bg-info">
           <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-          <div class="detail">
+          <div class="sidemenu-username">
             <p>User Name</p>
           </div>
         </div>
+        <form class="sidemenu-searchform">
+          <input type="text" onkeyup="myFunction()" placeholder="Search.." />
+          <button><i class="fas fa-search"></i></button>
+        </form>
+        <ul class="list-items">
+          <li>
+            <a href="#"><i class="fas fa-cog"></i>Settings</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-sign-out-alt"></i>Sign out</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-stream"></i>Option 1</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-stream"></i>Option 2</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-stream"></i>Option 3</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-stream"></i>Option 4</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-stream"></i>Option 5</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidebar">
+      <div class="card">
+        <div class="card-header bg-info"></div>
         <div class="card-body" *ngFor="let chat of chats">
           <div class="contact" (click)="getChatMessages(chat.chatId)">
             <a  class="contact-btn">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>{{chat.chatName}}</div>
+              <div>{{ chat.chatName }}</div>
               <!-- <div>Today</div> -->
             </a>
           </div>
-          
         </div>
-        <!-- <div class="card-body">
+        <div class="card-body">
           <div class="contact">
             <a href="" class="contact-btn">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-              <div>User Name</div>
-              <div>Today</div>
+              <div class="contact-name">User Name</div>
+              <div class="contact-date">Today</div>
             </a>
           </div>
-          
-        </div> -->
+          <div class="contact">
+            <a href="" class="contact-btn">
+              <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
+              <div class="contact-name">User Name</div>
+              <div class="contact-date">Today</div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="main">
@@ -35,13 +78,16 @@
       
         <div class="card-header bg-info">
           <img src="assets/images/user-avatar2.svg" alt="" />
-          <p>User Name</p>
+          <div class="chat-title">
+            <p class="chat-name">User Name</p>
+            <p class="chat-info">Basic chat info goes here</p>
+          </div>
         </div>
         <div class="card-body msg-body" *ngFor="let message of chatMssages">
           <div *ngIf="message.displayType == 0; then mediaSent; else mediaReceived"></div>
           <ng-template #mediaSent>
             <div class="media sent">
-              <img src="assets/images/user-avatar.svg" alt="" />
+              <p class="sender-name">~ Message sender name</p>
               <div class="message">
                 <p>
                   {{message.text}}
@@ -61,6 +107,39 @@
           </ng-template>
           
           
+          
+        <!-- <div class="card-body msg-body">
+          <div class="media received">
+            <img src="assets/images/user-avatar2.svg" alt="" />
+            <div class="message">
+              <p class="sender-name">~ Message sender name</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorem, sint?
+              </p>
+            </div>
+          </div>
+          <div class="media received">
+            <img src="assets/images/user-avatar2.svg" alt="" />
+            <div class="message">
+              <p class="sender-name">~ Message sender name</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt voluptates molestias ut ad ex. Voluptatibus optio at
+                hic saepe in, dolor voluptatem quos culpa voluptate placeat.
+                Nesciunt saepe perferendis eius.
+              </p>
+            </div>
+          </div>
+          <div class="media sent">
+            <img src="assets/images/user-avatar.svg" alt="" />
+            <div class="message">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorem, sint?
+              </p>
+            </div>
+          </div> -->
           
         </div>
         <div class="compose">
