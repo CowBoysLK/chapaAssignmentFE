@@ -315,7 +315,7 @@
 
   button {
     border: none;
-    background: blue;
+    background: aquamarine;
     color: white;
     padding: 0 2vw 0 2vw;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -326,7 +326,7 @@
   }
   button:hover {
     i {
-      color: aquamarine;
+      color: #404040;
     }
   }
 }
@@ -369,6 +369,7 @@
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   box-shadow: 0 0px 10px 3px #222;
+  cursor: pointer;
 }
 #sidemenubar .list-items li:first-child {
   border-top: none;

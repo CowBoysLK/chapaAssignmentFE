@@ -1,0 +1,68 @@
+#dialog-title {
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1px;
+  width: 30vw;
+}
+
+.compose {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  textarea:focus {
+    outline: none !important;
+  }
+}
+
+.compose form {
+  display: flex;
+}
+
+.compose form textarea {
+  flex: 3 3 400px;
+  border: 1px solid #333;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  resize: none;
+  color: #333;
+  padding: 6px;
+  border-radius: 0.25rem;
+}
+.compose button {
+  flex-basis: 50px;
+  font-weight: bold;
+  border: 1px solid #333;
+  background: aquamarine;
+  color: #333333;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.25rem;
+  margin-left: 1rem;
+}
+
+.contact a {
+  height: 50px;
+}
+
+.contact a img {
+  width: 48px;
+  height: 48px;
+  margin-right: 15px;
+}
+
+.contact .contact-btn {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #333;
+
+  .contact-name {
+    margin-top: 1rem;
+  }
+}
+
+.contact .contact-btn:hover,
+.active {
+  background: #eee;
+}
