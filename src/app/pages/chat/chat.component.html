@@ -46,16 +46,16 @@
     <div class="sidebar">
       <div class="card">
         <div class="card-header bg-info"></div>
-        <div class="card-body" *ngFor="let chat of chats">
-          <div class="contact" (click)="getChatMessages(chat.id)">
-            <a href="" class="contact-btn">
+        <div class="card-body">
+          <div class="contact">
+            <a class="contact-btn" *ngFor="let chat of chats" (click)="getChatMessages(chat.chatId)">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
               <div>{{ chat.chatName }}</div>
               <!-- <div>Today</div> -->
             </a>
           </div>
         </div>
-        <div class="card-body">
+        <!-- <div class="card-body">
           <div class="contact">
             <a href="" class="contact-btn">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
@@ -70,11 +70,12 @@
               <div class="contact-date">Today</div>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="main">
       <div class="card">
+
         <div class="card-header bg-info">
           <img src="assets/images/user-avatar2.svg" alt="" />
           <div class="chat-title">
@@ -82,19 +83,61 @@
             <p class="chat-info">Basic chat info goes here</p>
           </div>
         </div>
-        <div class="card-body msg-body">
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
+        <!-- <div class="card-body msg-body" *ngFor="let message of chatMssages">
+          <div *ngIf="message.displayType == 0; then mediaSent; else mediaReceived"></div>
+          <ng-template #mediaSent>
+            <div class="media sent">
               <p class="sender-name">~ Message sender name</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
+              <div class="message">
+                <p>
+                  {{message.text}}
+                </p>
+              </div>
             </div>
+          </ng-template>
+          <ng-template #mediaReceived>
+            <div class="media received">
+              <img src="assets/images/user-avatar2.svg" alt="" />
+              <div class="message">
+                <p>
+                  {{message.text}}
+                </p>
+              </div>
+            </div> 
+          </ng-template> -->
+
+
+
+        <div class="card-body msg-body">
+          <div *ngFor="let message of chatMssages">
+            <div *ngIf="message.displayType == 0; then mediaSent; else mediaReceived"></div>
+            <ng-template #mediaReceived>
+              <div class="media received">
+                <img src="assets/images/user-avatar.svg" alt="" />
+                <div class="message">
+                  <p class="sender-name">~ Message sender name</p>
+                  <p>
+                    {{message.text}}
+                  </p>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #mediaSent>
+
+              <div class="media sent">
+                <img src="assets/images/user-avatar.svg" alt="" />
+                <div class="message">
+                  <p>
+                    {{message.text}}
+                  </p>
+                </div>
+              </div>
+            </ng-template>
           </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
+
+
+          <!-- <div class="media received">
+            <img src="assets/images/user-avatar.svg" alt="" />
             <div class="message">
               <p class="sender-name">~ Message sender name</p>
               <p>
@@ -104,93 +147,14 @@
                 Nesciunt saepe perferendis eius.
               </p>
             </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <!-- <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p class="sender-name">~ Message sender name</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p class="sender-name">~ Message sender name</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p class="sender-name">~ Message sender name</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media sent">
-            <img src="assets/images/user-avatar.svg" alt="" />
-            <div class="message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
-          </div>
-          <div class="media received">
-            <img src="assets/images/user-avatar2.svg" alt="" />
-            <div class="message">
-              <p class="sender-name">~ Message sender name</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem, sint?
-              </p>
-            </div>
           </div> -->
+
+
         </div>
         <div class="compose">
-          <form action="">
-            <textarea
-              name=""
-              id=""
-              rows="1"
-              placeholder="Enter your message..."
-            ></textarea>
-            <button>
+          <form>
+            <textarea name="" id="" rows="1" [formControl]="msgText" placeholder="Enter your message..."></textarea>
+            <button (click)="createNewMessage() ">
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
