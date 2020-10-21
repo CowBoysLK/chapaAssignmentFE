@@ -1,6 +1,8 @@
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import * as ipfsClient from 'ipfs-http-client';
+import { Observable } from 'rxjs';
+import {FileUploadService } from '../../services/file-upload.service';
 
 @Component({
   selector: 'app-file-share',
@@ -9,7 +11,9 @@ import * as ipfsClient from 'ipfs-http-client';
 })
 export class FileShareComponent implements OnInit {
   @ViewChild('fileInput') fileInput;
-  constructor() { }
+
+   fileInformation = [] ;
+  constructor(private fileService: FileUploadService) { }
   
  
   fileBuffer: ArrayBuffer | string  = null;
@@ -19,6 +23,16 @@ export class FileShareComponent implements OnInit {
   ngOnInit(): void {
     this.ipfs = ipfsClient({host: 'ipfs.infura.io', port:5001, protocol: 'https'});
     const { globSource } = this.ipfs;
+
+    const getfileObervable = new Observable(() => {
+      setInterval( async  () =>{
+        const data = await this.fileService.getAllFilesInfo();
+        console.log(data);
+          this.fileInformation = data;
+      }, 5000);
+    });
+
+    getfileObervable.subscribe();
   }
 
 
@@ -54,7 +68,14 @@ export class FileShareComponent implements OnInit {
     
 
     const fileHash = fileUp.path;
+
+    this.fileService.sendFileUploadData(fileHash , this.fileName);
     
+    
+  }
+
+  onGetFileUrlHsh(fileId : number){
+    console.log('file id ' + fileId);
     
   }
 

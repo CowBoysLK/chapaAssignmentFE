@@ -79,13 +79,54 @@
                       <button mat-raised-button color="primary" class="file-select-button" (click)="uploadFile()" >
                         upload File
                       </button>
-                      <p>&nbsp;</p>
+                      <!-- <p>&nbsp;</p>
                       <h3>Your hash is:  </h3> 
                       <p>&nbsp;</p>
-                      <h4>Available at: </h4> 
+                      <h4>Available at: </h4>  -->
                     </form>
                   </div>
                 </main>
+              </div>
+              <div className="row">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">File Name</th>
+                      <th scope="col">File Url</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let file of fileInformation; index as i">
+                      <th scope="row">{{i}}</th>
+                      <td>{{file.name}}</td>
+                      <!-- <td>
+                        <button mat-stroked-button color="primary" class="file-select-button" (click)="onGetFileUrlHsh(file.hashId)" >
+                          file Url 
+                        </button>
+                      </td> -->
+
+                      <td>
+                        <a href="https://ipfs.infura.io/ipfs/{{file.urlHash}}">
+                        https://ipfs.infura.io/ipfs/{{file.urlHash}}
+                      </a >
+                    </td>
+                    </tr>
+                    <!-- <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr> -->
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
