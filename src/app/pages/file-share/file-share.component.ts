@@ -79,4 +79,8 @@ export class FileShareComponent implements OnInit {
     
   }
 
+  copyFilePath(urlHash: string){
+    
+  }
+
 }
