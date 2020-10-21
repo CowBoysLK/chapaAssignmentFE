@@ -8,14 +8,17 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import {MatButtonModule} from '@angular/material/button';
 import { DialogNewchatComponent } from './pages/chat/components/dialog-newchat/dialog-newchat.component';
+import { FileShareComponent } from './pages/file-share/file-share.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ChatComponent,
-    DialogNewchatComponent
+    DialogNewchatComponent,
+    FileShareComponent
   ],
   entryComponents: [DialogNewchatComponent],
   imports: [
@@ -24,7 +27,8 @@ import { DialogNewchatComponent } from './pages/chat/components/dialog-newchat/d
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
