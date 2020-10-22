@@ -24,6 +24,15 @@ export class FileShareComponent implements OnInit {
     this.ipfs = ipfsClient({host: 'ipfs.infura.io', port:5001, protocol: 'https'});
     const { globSource } = this.ipfs;
 
+    const data = this.fileService.getAllFilesInfo()
+                    .then((result)=> {
+                      if(result){
+                        this.fileInformation = result;
+                      }
+                    });
+       
+    
+
     const getfileObervable = new Observable(() => {
       setInterval( async  () =>{
         const data = await this.fileService.getAllFilesInfo();

@@ -28,4 +28,23 @@ export class LoginService {
       
 
   }
+
+  async getAllUsers(){
+    const userInfoList = [];
+    const url = "http://localhost:3000/api/login/allUsers";
+    const result = await axios.get(url);
+    if (result.status === 200) {
+        result.data.forEach(data => {
+          const userInfo = {
+            UserId: data.UserId,
+            UserName: data.UserName,
+            addeToChat: false
+          }
+          userInfoList.push(userInfo);
+        });
+      return userInfoList;
+    } else { 
+      return null;
+    }
+  }
 }
