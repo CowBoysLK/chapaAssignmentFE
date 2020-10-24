@@ -38,6 +38,7 @@ export class ChatService {
         else {
          msg.displayType = 1;
         }
+        msg.text = this.formatMessageText(msg.text);
         messages.push(msg);
       });
 
@@ -48,13 +49,19 @@ export class ChatService {
     }
   }
 
-  // formatMessageText(messaeText : string){
-  //   const wordList : String[] = messaeText.split(' ');
-  //   wordList = wordList.map(word => {
-  //     if(word.includes(""))
-  //   })
+  formatMessageText(messaeText : string){
+    let wordList : string[] = messaeText.split(' ');
+    wordList = wordList.map(word => {
+      if(word.includes("https://")){
+        return `<a href="${word}">${word} </a>`;
+      }
+      else {
+        return `${word} `;
+      }
+    });
+    return wordList.reduce((w1 , w2) => w1 + w2 , '');
 
-  // }
+  }
   async sendNewMessage(msg: String , userId : Number , chatId : Number){
   const url = 'http://localhost:3000/api/messages/newMsg'
   const result = await axios.post(url,{
