@@ -1,5 +1,6 @@
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Injectable } from '@angular/core';
+import { strict } from 'assert';
 import axios from 'axios';
 import { ChatMessage } from '../models/chat.model';
 
@@ -46,6 +47,14 @@ export class ChatService {
       return null;
     }
   }
+
+  // formatMessageText(messaeText : string){
+  //   const wordList : String[] = messaeText.split(' ');
+  //   wordList = wordList.map(word => {
+  //     if(word.includes(""))
+  //   })
+
+  // }
   async sendNewMessage(msg: String , userId : Number , chatId : Number){
   const url = 'http://localhost:3000/api/messages/newMsg'
   const result = await axios.post(url,{
