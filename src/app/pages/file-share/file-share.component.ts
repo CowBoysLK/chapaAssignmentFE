@@ -13,6 +13,7 @@ export class FileShareComponent implements OnInit {
   @ViewChild('fileInput') fileInput;
 
    fileInformation = [] ;
+   userName : string ;
   constructor(private fileService: FileUploadService) { }
   
  
@@ -23,6 +24,7 @@ export class FileShareComponent implements OnInit {
   ngOnInit(): void {
     this.ipfs = ipfsClient({host: 'ipfs.infura.io', port:5001, protocol: 'https'});
     const { globSource } = this.ipfs;
+    this.userName = sessionStorage.getItem("userName");
 
     const data = this.fileService.getAllFilesInfo()
                     .then((result)=> {
