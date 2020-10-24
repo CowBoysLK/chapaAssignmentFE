@@ -121,17 +121,20 @@
     flex: 3 3 500px;
     clear: both;
     min-width: 400px;
+    
   }
 
   .main .card {
     border-left: 0px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0px;
+    
   }
 
   .main .card-body {
     height: 84vh;
     overflow-y: scroll;
+    padding-left: 10%;
   }
 
   .chat-title {
@@ -150,6 +153,10 @@
     justify-content: center;
     font-size: x-large;
     }
+  }
+
+  #fileshare-body{
+    padding-left: 5%;
   }
 
   .media {

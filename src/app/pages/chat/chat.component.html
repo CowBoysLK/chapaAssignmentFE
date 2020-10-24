@@ -1,4 +1,4 @@
-<div class="container">
+<div class="main-container">
   <div class="rows">
     <div class="wrapper">
       <input type="checkbox" id="btn" hidden />
@@ -116,9 +116,9 @@
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
                   <p class="sender-name">~ {{message.senderName}}</p>
-                  <p>
+                  <a href="#">
                     {{message.text}}
-                  </p>
+                  </a>
                 </div>
               </div>
             </ng-template>
@@ -127,9 +127,9 @@
               <div class="media sent">
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
-                  <p>
+                  <a>
                     {{message.text}} 
-                  </p>
+                  </a>
                 </div>
               </div>
             </ng-template>
