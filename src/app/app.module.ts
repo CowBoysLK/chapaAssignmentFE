@@ -13,6 +13,7 @@ import { DialogNewchatComponent } from './pages/chat/components/dialog-newchat/d
 import { FileShareComponent } from './pages/file-share/file-share.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { TrustUrlPipe } from './services/trust-url.pipe';
+import { UrlFormatterPipe } from './services/url-formatter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TrustUrlPipe } from './services/trust-url.pipe';
     ChatComponent,
     DialogNewchatComponent,
     FileShareComponent,
-    TrustUrlPipe
+    TrustUrlPipe,
+    UrlFormatterPipe
   ],
   entryComponents: [DialogNewchatComponent],
   imports: [

@@ -116,7 +116,7 @@
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
                   <p class="sender-name">~ {{message.senderName}}</p>
-                  <p  [innerHTML]= "message.text | trustUrl"></p>
+                  <p  [innerHTML]= "message.text | urlFormatter"></p>
                 </div>
               </div>
             </ng-template>
@@ -126,7 +126,7 @@
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
                  
-                  <p  [innerHTML]= "message.text | trustUrl"></p>
+                  <p  [innerHTML]= "message.text | urlFormatter"></p>
                 </div>
               </div>
             </ng-template>
