@@ -11,6 +11,7 @@ import { MaterialModule } from './material/material.module';
 import {MatButtonModule} from '@angular/material/button';
 import { DialogNewchatComponent } from './pages/chat/components/dialog-newchat/dialog-newchat.component';
 import { FileShareComponent } from './pages/file-share/file-share.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FileShareComponent } from './pages/file-share/file-share.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
