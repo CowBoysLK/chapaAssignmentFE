@@ -2,8 +2,9 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    background-color: #333;
   }
-  
+
   .card {
     position: relative;
     display: -ms-flexbox;
@@ -17,7 +18,7 @@
     // border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
   }
-  
+
   .card-header {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
@@ -26,14 +27,14 @@
     display: flex;
     height: 7vh;
   }
-  
+
   .bg-info {
     background-color: #4b4b4b !important;
     // border-right: 1px solid #eee;
-  
+
     color: #fff;
   }
-  
+
   .rows {
     display: flex;
   }
@@ -44,43 +45,43 @@
   .sidebar {
     flex: 1 1 240px;
   }
-  
+
   .sidebar .card-body {
     height: 90vh;
     overflow-y: scroll;
   }
-  
+
   .sidebar .card {
     border-right: 0;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  
+
   .sidebar .card-header {
     border-right: 1px solid #eee;
   }
-  
+
   .sidebar .card-header p,
   .main .card-header p {
     margin-top: 15px;
     margin-left: 10px;
   }
-  
+
   .sidebar .card .card-body {
     border-right: 1px solid rgba(0, 0, 0, 0.125);
   }
-  
+
   .sidebar .card-body .contact a {
     height: 50px;
     /*border: 1px solid #17a2b8*/
   }
-  
+
   .sidebar .card-body .contact a img {
     width: 48px;
     height: 48px;
     margin-right: 15px;
   }
-  
+
   .sidebar .card-body .contact .contact-btn {
     padding: 10px;
     display: flex;
@@ -89,7 +90,7 @@
     border-bottom: 1px solid #eee;
     text-decoration: none;
     color: #333;
-  
+
     .contact-name {
       margin-top: 1rem;
     }
@@ -98,41 +99,41 @@
       font-size: 12px;
     }
   }
-  
+
   .sidebar .card-body .contact .contact-btn div {
     flex: 1;
   }
-  
+
   .sidebar .card-body .contact .contact-btn div:nth-child(2) {
     flex: 4;
     flex-shrink: 6;
   }
-  
+
   .sidebar .card-body .contact .contact-btn:hover,
   .active {
     background: #eee;
   }
-  
+
   /*Sidebar end*/
-  
+
   /*msg body start*/
   .main {
     flex: 3 3 500px;
     clear: both;
     min-width: 400px;
   }
-  
+
   .main .card {
     border-left: 0px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0px;
   }
-  
+
   .main .card-body {
     height: 84vh;
     overflow-y: scroll;
   }
-  
+
   .chat-title {
     margin-top: -1vh;
     padding: 0;
@@ -150,43 +151,43 @@
     font-size: x-large;
     }
   }
-  
+
   .media {
     display: flex;
     margin: 10px;
   }
-  
+
   .main .media img {
     width: 48px !important;
     height: 48px;
   }
-  
+
   .media .message {
     padding: 5px 10px;
     background: #eee;
   }
-  
+
   .received .message {
     border-radius: 0 10px 10px 10px;
     margin-left: 10px;
-  
+
     .sender-name {
       font-size: 12px;
       margin: 0;
       color: #404040;
     }
   }
-  
+
   .sent {
     flex-flow: row-reverse;
   }
-  
+
   .sent .message {
     margin-right: 10px;
     border-radius: 10px 0px 10px 10px;
     background-color: aquamarine;
   }
-  
+
   .compose {
     padding: 15px;
     background-color: #333;
@@ -195,11 +196,11 @@
       outline: none !important;
     }
   }
-  
+
   .compose form {
     display: flex;
   }
-  
+
   .compose form textarea {
     flex: 3 3 400px;
     border: 0px;
@@ -218,38 +219,38 @@
     cursor: pointer;
     font-size: larger;
     outline: none;
-  
+
     :hover {
       color: aquamarine;
     }
   }
-  
+
   /*msg body end*/
   @media all and (max-width: 700px) {
     .sidebar {
       flex: 1 1 30px;
     }
-  
+
     .sidebar .card-body .contact .contact-btn div:nth-child(2) {
       display: none;
     }
-  
+
     .sidebar .card-body .contact .contact-btn div:nth-child(3) {
       display: none;
     }
-  
+
     .sidebar .card-body .contact .contact-btn {
       display: flex;
       justify-content: center;
       align-content: center;
       margin: auto;
     }
-  
+
     .sidebar .card-header p {
       display: none;
     }
   }
-  
+
   /******SIDE MENU BAR******/
   .wrapper {
     height: 100%;
@@ -311,12 +312,12 @@
       border-radius: 0.5rem 0 0 0.5rem;
       padding: 11px;
     }
-  
+
     input:focus {
       outline: none;
       padding: 12px;
     }
-  
+
     button {
       border: none;
       background: aquamarine;
@@ -419,4 +420,3 @@
   .list-items .icons a:first-child {
     margin-left: 0px;
   }
-  

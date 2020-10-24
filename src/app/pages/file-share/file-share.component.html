@@ -42,19 +42,19 @@
           </ul>
         </nav>
       </div>
-  
-      
+
+
       <div class="main">
         <div class="card">
-  
+
           <div class="card-header bg-info">
-           
+
             <div class="chat-title">
-             
+
               <h3 class="chat-info">File Share Appliation </h3>
             </div>
           </div>
-          <div>
+          <div style="height: 94vh;">
             <!-- <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
               <ul className="navbar-nav px-3">
                 <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
@@ -65,22 +65,22 @@
             <div className="container-fluid mt-5">
               <div className="row">
                 <main role="main" className="col-lg-12 d-flex text-center">
-                  <div className="content mr-auto ml-auto">
-                      
-                    
-                    <form onSubmit = {this.onSubmit}>
+                  <div className="content mr-auto ml-auto" style="background-color: whitesmoke; margin: 1rem; border-radius: 0.5rem; width: fit-content; padding-right: 6rem;">
+
+
+                    <form onSubmit = {this.onSubmit} style="padding: 1rem;">
                       <!-- <input type = 'file' onChange={this.captureFile} />
                       <input type = 'submit' /> -->
                       <input type="file" style="display: none" #fileInput  (change)="onChangeFileInput()"  />
-                      <button mat-stroked-button color="primary" class="file-select-button" (click)="onClickFileInputButton()" >
-                        select file 
+                      <button mat-flat-button style="background-color: springgreen;" class="file-select-button" (click)="onClickFileInputButton()" >
+                        Select File
                       </button>
-                      <p> File name : {{this.fileName}}</p>
+                      <p style="padding-top: 6px; margin-left: 2px;"> File name : {{this.fileName}}</p>
                       <button mat-raised-button color="primary" class="file-select-button" (click)="uploadFile()" >
-                        upload File
+                        Upload File
                       </button>
                       <!-- <p>&nbsp;</p>
-                      <h3>Your hash is:  </h3> 
+                      <h3>Your hash is:  </h3>
                       <p>&nbsp;</p>
                       <h4>Available at: </h4>  -->
                     </form>
@@ -94,7 +94,7 @@
                       <th scope="col">#</th>
                       <th scope="col">File Name</th>
                       <th scope="col">File Url</th>
-                      
+
                     </tr>
                   </thead>
                   <tbody>
@@ -130,11 +130,11 @@
               </div>
             </div>
           </div>
-            
-  
-  
-  
-          
+
+
+
+
+
         </div>
       </div>
     </div>
