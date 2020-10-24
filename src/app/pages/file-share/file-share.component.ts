@@ -72,10 +72,11 @@ export class FileShareComponent implements OnInit {
 
   async uploadFile() {
     console.log('upload file');
-    this.showSuccessMsg();
+    
 
     const fileUp = await this.ipfs.add(this.fileBuffer);
     console.log('file added');
+    this.showSuccessMsg();
     console.log(fileUp.path);
 
     const fileHash = fileUp.path;
