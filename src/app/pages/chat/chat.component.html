@@ -10,7 +10,7 @@
         <div class="card-header bg-info">
           <div><img src="assets/images/user-avatar.svg" alt="" /></div>
           <div class="sidemenu-username">
-            <p>User Name</p>
+            <p>{{userName}}</p>
           </div>
         </div>
         <!-- <form class="sidemenu-searchform">
@@ -116,9 +116,9 @@
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
                   <p class="sender-name">~ {{message.senderName}}</p>
-                  <a href="#">
+                  <p >
                     {{message.text}}
-                  </a>
+                  </p>
                 </div>
               </div>
             </ng-template>
@@ -127,9 +127,9 @@
               <div class="media sent">
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
-                  <a>
+                  <p>
                     {{message.text}} 
-                  </a>
+                  </p>
                 </div>
               </div>
             </ng-template>

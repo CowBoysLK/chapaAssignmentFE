@@ -14,6 +14,7 @@ export class FileShareComponent implements OnInit {
   @ViewChild('fileInput') fileInput;
 
   fileInformation = [];
+  userName : string ;
   constructor(
     private fileService: FileUploadService,
     private _snackBar: MatSnackBar
@@ -30,6 +31,7 @@ export class FileShareComponent implements OnInit {
       protocol: 'https',
     });
     const { globSource } = this.ipfs;
+    this.userName = sessionStorage.getItem("userName");
 
     const data = this.fileService.getAllFilesInfo().then((result) => {
       if (result) {

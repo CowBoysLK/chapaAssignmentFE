@@ -19,7 +19,8 @@ export class LoginService {
       });
 
       if(result.data.status == "Success"){
-        sessionStorage.setItem("userId" , result.data.userId)
+        sessionStorage.setItem("userId" , result.data.userId);
+        sessionStorage.setItem("userName", result.data.userName)
         return true;
       }
       else {

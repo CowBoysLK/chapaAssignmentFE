@@ -16,6 +16,7 @@ export class ChatComponent implements OnInit {
   chats: chat[] = [];
   chatMssages: ChatMessage[] = [];
   activechatName: string = '';
+  userName: string = '';
 
   constructor(private chatService: ChatService, public dialog: MatDialog) {}
 
@@ -34,6 +35,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = sessionStorage.getItem('userId');
+    this.userName = sessionStorage.getItem("userName");
 
     this.chatService.getchatListForUser(userId).then((chatsInfo) => {
       if (chatsInfo) {
