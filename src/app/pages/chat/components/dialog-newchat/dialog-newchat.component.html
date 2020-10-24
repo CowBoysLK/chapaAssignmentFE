@@ -3,50 +3,33 @@
 </h3>
 <div class="compose">
   <form action="">
-    <textarea name="" id="" rows="1" placeholder="Enter chat name"></textarea>
-    <button>Create</button>
+   <textarea name="" id="" rows="1" [formControl]="chatName" placeholder="Enter chat name"></textarea>
+    <button (click)="CreateNewChat()">Create</button>
   </form>
 </div>
 
 <mat-dialog-content class="mat-typography">
   <h3>Select contact to start a new chat</h3>
-  <div class="contact">
-    <a href="" class="contact-btn">
-      <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-      <div class="contact-name">User Name</div>
-    </a>
+  <div class="contact" *ngFor="let info of userInfo">
+    <div *ngIf="info.addeToChat == true ; then selected; else notSelected"></div>
+    <ng-template #selected>
+      <a  class="contact-btn selected" (click)="AddUserTochat(info.UserId)">
+        <div><img src="assets/images/user-avatar.svg" alt="" /></div>
+        <div class="contact-name">{{info.UserName}}</div>
+      </a>
+    </ng-template>
+    <ng-template #notSelected>
+      <a  class="contact-btn" (click)="AddUserTochat(info.UserId)">
+        <div><img src="assets/images/user-avatar.svg" alt="" /></div>
+        <div class="contact-name">{{info.UserName}}</div>
+      </a>
+    </ng-template>
+    
+    
   </div>
-  <div class="contact">
-    <a href="" class="contact-btn">
-      <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-      <div class="contact-name">User Name</div>
-    </a>
-  </div>
-  <div class="contact">
-    <a href="" class="contact-btn">
-      <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-      <div class="contact-name">User Name</div>
-    </a>
-  </div>
-  <div class="contact">
-    <a href="" class="contact-btn">
-      <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-      <div class="contact-name">User Name</div>
-    </a>
-  </div>
-  <div class="contact">
-    <a href="" class="contact-btn">
-      <div><img src="assets/images/user-avatar.svg" alt="" /></div>
-      <div class="contact-name">User Name</div>
-    </a>
-  </div>
-  <div class="contact">
-    <a href="" class="contact-btn">
-      <div><img src="assets/images/user-avatar2.svg" alt="" /></div>
-      <div class="contact-name">User Name</div>
-    </a>
-  </div>
+  
 </mat-dialog-content>
 <mat-dialog-actions align="end">
+  <!-- <button mat-raised-button color="primary">Create</button> -->
   <button mat-button mat-dialog-close>Cancel</button>
 </mat-dialog-actions>

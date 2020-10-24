@@ -15,6 +15,8 @@ import { Observable } from 'rxjs';
 export class ChatComponent implements OnInit {
   chats: chat[] = [];
   chatMssages: ChatMessage[] = [];
+  activechatName: string = '';
+  userName: string = '';
 
   constructor(private chatService: ChatService, public dialog: MatDialog) {}
 
@@ -33,6 +35,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = sessionStorage.getItem('userId');
+    this.userName = sessionStorage.getItem("userName");
 
     this.chatService.getchatListForUser(userId).then((chatsInfo) => {
       if (chatsInfo) {
@@ -52,10 +55,13 @@ export class ChatComponent implements OnInit {
     getMsgObervable.subscribe();
   }
 
-  getChatMessages(chatId: number) {
+  getChatMessages(chatId: number ) {
     this.chatId = chatId;
     console.log('chat id ' + chatId);
     sessionStorage.setItem('activeChat', chatId.toString());
+    this.activechatName  = this.chats
+                                  .filter(chat => chat.chatId == chatId)
+                                  .map(chat => chat.chatName)[0];
     const userId = sessionStorage.getItem('userId');
     // this.liveChat.joinRoom({
     //   userId : userId,

@@ -60,9 +60,15 @@
   .contact-name {
     margin-top: 1rem;
   }
+
+ 
 }
 
-.contact .contact-btn:hover,
-.active {
-  background: #eee;
+.contact .contact-btn.selected{
+  background-color: #b4d2ce;
 }
+
+// .contact .contact-btn:hover,
+// .active {
+//   background: #eee;
+// }
