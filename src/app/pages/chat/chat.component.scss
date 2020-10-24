@@ -2,6 +2,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: #333;
 }
 
 .card {
@@ -184,6 +185,7 @@
 }
 
 .compose {
+  margin-bottom: -1px;
   padding: 15px;
   background-color: #333;
   border-radius: 0.5rem 0.5rem 0 0;
