@@ -60,4 +60,18 @@ export class ChatService {
     return null;
   }
 }
+
+  async createNewChat(chatName: string , users : Number[]){
+    const url = 'http://localhost:3000/api/chat';
+    const result = await axios.post(url, {
+      chatName: chatName,
+      usersList: users
+    });
+    if (result.status === 200) {
+      
+      return true;
+    } else { 
+      return false;
+    }
+  }
 }

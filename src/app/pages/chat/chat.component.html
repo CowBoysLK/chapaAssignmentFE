@@ -48,7 +48,7 @@
         <div class="card-header bg-info"></div>
         <div class="card-body">
           <div class="contact">
-            <a class="contact-btn" *ngFor="let chat of chats" (click)="getChatMessages(chat.chatId)">
+            <a class="contact-btn" *ngFor="let chat of chats" (click)="getChatMessages(chat.chatId )">
               <div><img src="assets/images/user-avatar.svg" alt="" /></div>
               <div>{{ chat.chatName }}</div>
               <!-- <div>Today</div> -->
@@ -79,8 +79,8 @@
         <div class="card-header bg-info">
           <img src="assets/images/user-avatar2.svg" alt="" />
           <div class="chat-title">
-            <p class="chat-name">User Name</p>
-            <p class="chat-info">Basic chat info goes here</p>
+  <p class="chat-name">{{activechatName}}</p>
+            <!-- <p class="chat-info">Basic chat info goes here</p> -->
           </div>
         </div>
         <!-- <div class="card-body msg-body" *ngFor="let message of chatMssages">
@@ -115,7 +115,7 @@
               <div class="media received">
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
-                  <p class="sender-name">~ Message sender name</p>
+                  <p class="sender-name">~ {{message.senderName}}</p>
                   <p>
                     {{message.text}}
                   </p>
@@ -128,7 +128,7 @@
                 <img src="assets/images/user-avatar.svg" alt="" />
                 <div class="message">
                   <p>
-                    {{message.text}}
+                    {{message.text}} 
                   </p>
                 </div>
               </div>
