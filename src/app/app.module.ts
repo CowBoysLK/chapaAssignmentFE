@@ -12,6 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { DialogNewchatComponent } from './pages/chat/components/dialog-newchat/dialog-newchat.component';
 import { FileShareComponent } from './pages/file-share/file-share.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { TrustUrlPipe } from './services/trust-url.pipe';
+import { UrlFormatterPipe } from './services/url-formatter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     LoginComponent,
     ChatComponent,
     DialogNewchatComponent,
-    FileShareComponent
+    FileShareComponent,
+    TrustUrlPipe,
+    UrlFormatterPipe
   ],
   entryComponents: [DialogNewchatComponent],
   imports: [
